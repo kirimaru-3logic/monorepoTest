@@ -3,10 +3,11 @@ import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { hello, sharedLib } from '@monorepo-test/shared-lib';
 import { ApiService } from './services/api.service';
+import { HelloApiStandaloneComponent } from './components/hello-api-standalone.component';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [NxWelcomeComponent, RouterModule, HelloApiStandaloneComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
