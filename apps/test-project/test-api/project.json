@@ -1,0 +1,24 @@
+{
+  "name": "test-project-test-api",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/test-project/test-api/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "test-project-test-api:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "test-project-test-api:build:development"
+        },
+        "production": {
+          "buildTarget": "test-project-test-api:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}
