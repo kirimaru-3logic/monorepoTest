@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { hello, sharedLib } from '@monorepo-test/shared-lib';
+import { ApiService } from './services/api.service';
 
 @Component({
   standalone: true,
@@ -13,9 +14,25 @@ import { hello, sharedLib } from '@monorepo-test/shared-lib';
 export class AppComponent {
   title = 'web-ui';
 
-  constructor() {
+  helloFromAPI = '- non connesso alle API -';
+
+  constructor(
+    private readonly api: ApiService,
+  ) {
     console.log(sharedLib());
     hello();
+    this.apiTest();
+  }
+
+  async apiTest() {
+    try {
+      const res = await this.api.test.askHello();
+      if (res?.message) {
+        this.helloFromAPI = res.message;
+      }
+    } catch (ex) {
+      console.error(ex);
+    }
   }
 }
 
