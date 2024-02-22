@@ -64,49 +64,48 @@ It will show tasks that you can run with Nx.
 
 
 
-## Guida installazione
-
-
-### Se non già installato
-npm add --global nx@latest
+## Guida Nx
 
 ### Se non già installato
-npm install -g pnpm
+`npm add --global nx@latest`
+
+### Se non già installato
+`npm install -g pnpm`
 
 
 
 ### Creazione monorepo (package manager consigliato con monorepo: pnpm)
 npx create-nx-workspace@latest NOME_MONOREPO --preset=apps --packageManager=npm
 ### es:
-npx create-nx-workspace@latest nx-monorepo-test --preset=apps --packageManager=npm
+`npx create-nx-workspace@latest nx-monorepo-test --preset=apps --packageManager=npm`
 
 
 
 ## DOPO ESSERE ENTRATI NELLA CARTELLA DEL MONOREPO:
 
 ### Aggiunta del supporto per Angular (Nx 18+)
-nx add @nx/angular
+`nx add @nx/angular`
 
 ### Creazione del progetto Angular (in una sottocartella "apps")
 nx g @nx/angular:app NOME_FRONTEND --directory=apps/NOME_PROGETTO/NOME_CARTELLA_FRONTEND --prefix=app
 ### es:
-nx g @nx/angular:app web-ui --directory=apps/test-project/web-ui --prefix=app
+`nx g @nx/angular:app web-ui --directory=apps/test-project/web-ui --prefix=app`
 
 ### Creazione di una libreria Angular
-nx g @nx/angular:lib NOME_LIBRERIA --directory=libs/NOME_CARTELLA_LIBRERIA
+`nx g @nx/angular:lib NOME_LIBRERIA --directory=libs/NOME_CARTELLA_LIBRERIA`
 
 
 ### Aggiunta del supporto per Nest (Nx 18+)
-nx add @nx/nest
+`nx add @nx/nest`
 
 ### Creazione del progetto Nest (in una sottocartella "apps") (https:###nx.dev/nx-api/nest)
 nx g @nx/nest:app NOME_NEST_APP --directory=apps/test-project/NOME_CARTELLA_NEST_APP
 ### es:
-nx g @nx/nest:app my-nest-app --directory=apps/test-project/nest
+`nx g @nx/nest:app my-nest-app --directory=apps/test-project/nest`
 
 
 ### per vedere poi un grafo dei "collegamenti" all'interno di un monorepo
-nx graph
+`nx graph`
 ### ...se nx non è installato globalmente
-npx nx graph
+`npx nx graph`
 
